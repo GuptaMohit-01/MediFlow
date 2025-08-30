@@ -44,6 +44,14 @@ body {
     top: 0;
     z-index: 50;
 }
+.logo {
+  height: 60px;     /* logo size */
+  width: auto;      /* aspect ratio  */
+  display: block;
+  margin: 0 auto 20px auto; /* center horizontally with margin */   
+  
+}
+
 .tagline {
   font-size: 1.8rem;
   font-weight: 700;
