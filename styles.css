@@ -44,12 +44,13 @@ body {
     top: 0;
     z-index: 50;
 }
-.logo {
-  height: 60px;     /* logo size */
-  width: auto;      /* aspect ratio  */
-  display: block;
-  margin: 0 auto 20px auto; /* center horizontally with margin */   
-  
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  color: #2563eb; /* Blue color for the main title */     
+  font-family: 'Poppins', sans-serif; /* Modern font */
 }
 
 .tagline {
