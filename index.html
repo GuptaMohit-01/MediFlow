@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-MediFlow - AI-Powered Healthcare Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.344.0/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg class="brain-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                            <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                            <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">AI-MediFlow</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="#" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v5h5"/>
+                            <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                            <path d="M21 21v-5h-5"/>
+                            <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                        </svg>
+                        <span>Alerts</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                            <path d="m21 12-6 0m-6 0-6 0"/>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+
+                <!-- User Profile -->
+                <div class="user-profile">
+                    <svg class="notification-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                    </svg>
+                    <svg class="settings-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 1v6m0 6v6"/>
+                        <path d="m21 12-6 0m-6 0-6 0"/>
+                    </svg>
+                    <div class="user-info">
+                        <div class="user-avatar">DM</div>
+                        <span class="user-name">Dr. Martinez</span>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="6" y2="6"/>
+                        <line x1="4" x2="20" y1="12" y2="12"/>
+                        <line x1="4" x2="20" y1="18" y2="18"/>
+                    </svg>
+                    <svg class="close-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 6-12 12"/>
+                        <path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav hidden">
+                <nav class="mobile-nav-content">
+                    <a href="#" class="mobile-nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9,22 9,12 15,12 15,22"/>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v5h5"/>
+                            <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                            <path d="M21 21v-5h-5"/>
+                            <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                        </svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+                        </svg>
+                        <span>Alerts</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="mobile-nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 1v6m0 6v6"/>
+                            <path d="m21 12-6 0m-6 0-6 0"/>
+                        </svg>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    AI-Powered Healthcare
+                    <span class="hero-title-gradient">Management</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Optimize OPD queues and hospital bed management with intelligent predictions
+                    and real-time insights
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary">
+                        <span>Get Started</span>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </button>
+                    
+                    <button class="btn-secondary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="6,3 20,12 6,21 6,3"/>
+                        </svg>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+
+                <!-- Feature Highlights -->
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <h3>Reducing wait times</h3>
+                        <p>Smart queue optimization</p>
+                    </div>
+                    <div class="hero-feature">
+                        <h3>Optimizing resources</h3>
+                        <p>Intelligent resource allocation</p>
+                    </div>
+                    <div class="hero-feature">
+                        <h3>Improving patient care</h3>
+                        <p>Enhanced healthcare delivery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-gradient-overlay"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-header">
+                <h2>Transforming Healthcare Efficiency</h2>
+                <p>Our AI-powered platform delivers measurable results across healthcare institutions</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                            <path d="M10 6h4"/>
+                            <path d="M10 10h4"/>
+                            <path d="M10 14h4"/>
+                            <path d="M10 18h4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number blue-gradient">150+</div>
+                    <p class="stat-label">Hospitals Connected</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number green-gradient">95%</div>
+                    <p class="stat-label">Prediction Accuracy</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7z"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number purple-gradient">12K+</div>
+                    <p class="stat-label">Daily Predictions</p>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <div class="stat-number orange-gradient">40%</div>
+                    <p class="stat-label">Wait Time Reduction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prediction Demo Section -->
+    <section class="prediction-demo">
+        <div class="container">
+            <div class="demo-header">
+                <h2>Experience AI-Powered Predictions</h2>
+                <p>See how our intelligent system predicts queue lengths and bed availability in real-time</p>
+            </div>
+
+            <div class="demo-content">
+                <!-- Input Form -->
+                <div class="demo-form">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                                <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                                <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                                <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                            </svg>
+                        </div>
+                        <h3>Queue Prediction Input</h3>
+                    </div>
+
+                    <div class="form-fields">
+                        <div class="field">
+                            <label>Hospital Number</label>
+                            <input type="text" id="hospitalId" placeholder="Enter hospital ID (e.g., 12345)">
+                        </div>
+
+                        <div class="field">
+                            <label>
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                                    <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/>
+                                    <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/>
+                                    <path d="M10 6h4"/>
+                                    <path d="M10 10h4"/>
+                                    <path d="M10 14h4"/>
+                                    <path d="M10 18h4"/>
+                                </svg>
+                                Department
+                            </label>
+                            <div class="select-wrapper">
+                                <select id="department">
+                                    <option value="">Select department</option>
+                                    <option value="cardiology">Cardiology</option>
+                                    <option value="emergency">Emergency</option>
+                                    <option value="orthopedics">Orthopedics</option>
+                                    <option value="pediatrics">Pediatrics</option>
+                                    <option value="neurology">Neurology</option>
+                                </select>
+                                <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label>
+                                <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12,6 12,12 16,14"/>
+                                </svg>
+                                Time Slot
+                            </label>
+                            <div class="select-wrapper">
+                                <select id="timeSlot">
+                                    <option value="">Select time slot</option>
+                                    <option value="morning">Morning (8:00 - 12:00)</option>
+                                    <option value="afternoon">Afternoon (12:00 - 16:00)</option>
+                                    <option value="evening">Evening (16:00 - 20:00)</option>
+                                </select>
+                                <svg class="select-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <button class="predict-btn" onclick="runPrediction()" disabled>
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+                            </svg>
+                            <span>Predict Queue & Availability</span>
+                        </button>
+                    </div>
+
+                    <!-- AI Info Box -->
+                    <div class="ai-info">
+                        <h4>AI-Powered Predictions:</h4>
+                        <p>Our system uses machine learning to analyze historical data, current trends, and real-time inputs to provide accurate queue length and bed availability predictions.</p>
+                    </div>
+                </div>
+
+                <!-- Results Display -->
+                <div class="demo-results">
+                    <div class="result-card" data-delay="0">
+                        <div class="result-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v5h5"/>
+                                <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                                <path d="M21 21v-5h-5"/>
+                                <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <div class="result-value">23 mins</div>
+                            <p class="result-label">Predicted wait time</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card" data-delay="100">
+                        <div class="result-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v5h5"/>
+                                <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                                <path d="M21 21v-5h-5"/>
+                                <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <div class="result-value">15 beds</div>
+                            <p class="result-label">Available beds</p>
+                        </div>
+                    </div>
+
+                    <div class="result-card" data-delay="200">
+                        <div class="result-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 3v5h5"/>
+                                <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                                <path d="M21 21v-5h-5"/>
+                                <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                            </svg>
+                        </div>
+                        <div class="result-content">
+                            <div class="result-value">92%</div>
+                            <p class="result-label">Accuracy rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-header">
+                <h2>Smart Healthcare Solutions</h2>
+                <p>Comprehensive AI-driven tools designed to revolutionize healthcare management and patient care</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon blue-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                            <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                            <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                            <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                            <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                            <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                            <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                            <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                            <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                        </svg>
+                    </div>
+                    <h3>AI-Powered Predictions</h3>
+                    <p>Advanced machine learning algorithms analyze historical data, current trends, and real-time inputs to provide accurate predictions.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon green-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12,6 12,12 16,14"/>
+                        </svg>
+                    </div>
+                    <h3>Real-Time Queue Management</h3>
+                    <p>Monitor and optimize patient queues in real-time, reducing wait times and improving patient satisfaction.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon purple-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v5h5"/>
+                            <path d="M3 8a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 4"/>
+                            <path d="M21 21v-5h-5"/>
+                            <path d="M21 16a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 20"/>
+                        </svg>
+                    </div>
+                    <h3>Resource Optimization</h3>
+                    <p>Intelligent bed allocation and resource management to maximize hospital efficiency and patient throughput.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon red-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>HIPAA Compliant</h3>
+                    <p>Enterprise-grade security ensuring all patient data is protected and compliant with healthcare regulations.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon yellow-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+                        </svg>
+                    </div>
+                    <h3>Instant Insights</h3>
+                    <p>Get immediate actionable insights with our lightning-fast analytics engine and intuitive dashboards.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon indigo-gradient">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7z"/>
+                        </svg>
+                    </div>
+                    <h3>Multi-Department Support</h3>
+                    <p>Seamlessly manage multiple departments and specialties from a single, unified platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo and Description -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                                <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                                <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                                <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                            </svg>
+                        </div>
+                        <span>AI-MediFlow</span>
+                    </div>
+                    <p>AI-powered healthcare management system for optimized patient flow and resource allocation.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <a href="#">About</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Support</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Copyright © 2025 AI-MediFlow • All rights reserved</p>
+                <div class="footer-powered">
+                    <span>Powered by</span>
+                    <div class="powered-brand">
+                        <div class="powered-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/>
+                                <path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/>
+                                <path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/>
+                                <path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/>
+                                <path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/>
+                                <path d="M3.477 10.896a4 4 0 0 1 .585-.396"/>
+                                <path d="M19.938 10.5a4 4 0 0 1 .585.396"/>
+                                <path d="M6 18a4 4 0 0 1-1.967-.516"/>
+                                <path d="M19.967 17.484A4 4 0 0 1 18 18"/>
+                            </svg>
+                        </div>
+                        <span>MediFlow AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
