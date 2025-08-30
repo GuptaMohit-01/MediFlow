@@ -45,29 +45,24 @@ body {
     z-index: 50;
 }
 .tagline {
-    font-size: 1.5rem; /* thoda bada text */
-    font-weight: 700;
-    text-align: center;
-    margin-top: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
 
-    /* Gradient text */
-    background: linear-gradient(90deg, #ff6a00, #ee0979);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    /* Animation for modern feel */
-    background-size: 200% auto;
-    animation: gradient-move 3s linear infinite;
+  /* Gradient text */
+  background: linear-gradient(90deg, #ff6a00, #ee0979);
+  -webkit-background-clip: text;   /* Chrome, Safari */
+  -webkit-text-fill-color: transparent;
+  background-clip: text;           /* Standard property */
+  color: transparent;              /* Fallback */
+  
+  /* Extra style */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
 }
 
-@keyframes gradient-move {
-    0% {
-        background-position: 0% center;
-    }
-    100% {
-        background-position: 200% center;
-    }
-}
 
 
 
