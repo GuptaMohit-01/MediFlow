@@ -45,41 +45,6 @@ body {
     z-index: 50;
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 20px;
-    color: #2563eb;
-    /* Blue color for the main title */
-    font-family: 'Poppins', sans-serif;
-    /* Modern font */
-}
-
-.tagline {
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 20px;
-
-    /* Gradient text */
-    background: linear-gradient(90deg, #ff6a00, #ee0979);
-    -webkit-background-clip: text;
-    /* Chrome, Safari */
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    /* Standard property */
-    color: transparent;
-    /* Fallback */
-
-    /* Extra style */
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: 'Poppins', sans-serif;
-}
-
 
 
 
