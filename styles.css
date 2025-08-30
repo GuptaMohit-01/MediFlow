@@ -45,15 +45,29 @@ body {
     z-index: 50;
 }
 .tagline {
-  font-size: 20px;
-  font-weight: bold;
-  color: #2c3e50; /* dark bluish */
-  margin-top: 15px;
-  text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
+    font-size: 1.5rem; /* thoda bada text */
+    font-weight: 700;
+    text-align: center;
+    margin-top: 15px;
+
+    /* Gradient text */
+    background: linear-gradient(90deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Animation for modern feel */
+    background-size: 200% auto;
+    animation: gradient-move 3s linear infinite;
 }
 
+@keyframes gradient-move {
+    0% {
+        background-position: 0% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
 
 
 
